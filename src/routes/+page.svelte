@@ -9,7 +9,7 @@
             Verbouwingen en<br/>
             Maatwerk Interieurs
         </h1>
-        <Button class="bg-blue-300">click hier</Button>
+        <!-- <Button class="bg-blue-300">click hier</Button> -->
     </div>
     <img alt="Bespoke 13" src="/hero.jpg" class="h-full w-full object-cover" />
 
