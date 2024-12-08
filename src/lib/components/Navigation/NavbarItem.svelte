@@ -5,13 +5,16 @@
     interface Props {
 		href: string;
         children: Snippet;
+        invert: boolean;
 	}
 
-    let { children, href = "/" }: Props = $props();
+    let { children, href = "/", invert = false }: Props = $props();
 </script>
 
 <NavigationMenu.Item>
-    <NavigationMenu.Link class="font-medium" href={href}>
-        {@render children()}
+    <NavigationMenu.Link class="group" href={href}>
+        <span class="font-medium group-hover:underline underline-offset-4" class:text-white={invert}>
+            {@render children()}
+        </span>
     </NavigationMenu.Link>
 </NavigationMenu.Item>
