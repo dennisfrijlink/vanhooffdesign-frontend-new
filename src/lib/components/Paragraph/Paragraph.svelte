@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { Button } from "bits-ui";
 	import type { Snippet } from "svelte";
 
     interface Props {
@@ -9,7 +8,7 @@
 
     let { children, class: className = '' }: Props = $props();
 </script>
-    
-<Button.Root class={ `bg-theme-blue rounded-full justify-center px-8 py-3 w-full flex gap-[10px] lg:w-auto text-white font-medium ${className}` }>
+
+<p class={ `text-black font-medium text-base leading-loose ${className}` }>
     {@render children()}
-</Button.Root>
+</p>

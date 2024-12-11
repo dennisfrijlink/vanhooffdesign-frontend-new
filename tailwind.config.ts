@@ -8,6 +8,10 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
+			colors: {
+				"theme-blue": "#4e6e80",
+				"theme-gray": "#717070"
+			},
 			fontFamily: {
 				poppins: ["poppins", ...defaultTheme.fontFamily.sans],
 				jakarta: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans]
