@@ -54,7 +54,12 @@
 		De meest recente projecten<br/>
 		die zijn opgeleverd
 	</Title>
-	<div class="grid grid-cols-12">
-		<ProjectCard title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
+	<div class="grid grid-cols-11 gap-6">
+		<ProjectCard class="col-span-5" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
+		<ProjectCard class="col-span-3" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
+		<ProjectCard class="col-span-3" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
+		<ProjectCard class="col-span-3" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
+		<ProjectCard class="col-span-3" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
+		<ProjectCard class="col-span-5" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
 	</div>
 </Container>
