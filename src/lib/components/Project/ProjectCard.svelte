@@ -1,29 +1,32 @@
 <script lang="ts">
-	import { CalendarDays } from "lucide-svelte";
+	import { ArrowUpRight, CalendarDays } from "lucide-svelte";
 	import type { Snippet } from "svelte";
 
     interface Props {
         title: string;
+        description: string;
         image: string;
         class?: string;
 	}
 
-    let { class: className = '', title, image }: Props = $props();
+    let { class: className = '', title, image, description }: Props = $props();
+
+    const projectId = title.toLowerCase().replace(/ /g, "-")
 </script>
 
-<div class={`rounded-[10px] overflow-hidden relative min-h-[20rem] ${className}`}>
-    <div class="relative p-4 z-10 h-full flex flex-col justify-end bg-gradient-to-b from-transparent to-[rgba(37,37,37,0.9)]">
-        <div class="flex items-center gap-3">
-            <h3 class="text-white text-lg font-semibold">{title}</h3>
-            <div class="flex items-center gap-2">
-                <CalendarDays class="stroke-white h-5 w-auto" />
-                <span class="text-white text-sm font-medium">2022</span>
-            </div>
+<div class={`rounded-[10px] overflow-hidden relative lg:h-auto h-[20rem] min-h-[20rem] ${className}`}>
+    <div class="rounded-full bg-white absolute top-5 right-5 z-10 w-12 h-5 grid place-items-center shadow">
+        <span class="text-black text-xs font-bold absolute">2022</span>
+    </div>
+    <div class="relative p-8 z-10 h-full flex flex-col justify-end bg-gradient-to-b from-transparent to-[rgba(37,37,37,0.9)]">
+        <div class="flex justify-between gap-3 items-end">
+            <h3 class="text-white text-xl md:text-2xl font-semibold max-w-96">{title}</h3>
+            <button class="rounded-full bg-white p-2" aria-labelledby={`project-${projectId}`}>
+                <ArrowUpRight class="stroke-black h-4 w-auto" />
+                <span id={`project-${projectId}`} hidden>Ga naar het project, {title}</span>
+            </button>
         </div>
-        <p class="text-white text-sm leading-normal text-opacity-75 max-w-64">
-            Een keuken in een monumentaal pand mag net wat extra's hebben. 
-            Zo kan de bijzondere marmerlook achterplaat helemaal oplichten.
-        </p>
     </div>
     <img class="h-full w-full object-cover absolute top-0 left-0" alt={title} src={image}/>
+
 </div>

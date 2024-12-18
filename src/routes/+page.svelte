@@ -7,7 +7,7 @@
 	import { MoveRight } from 'lucide-svelte';
 </script>
 
-<div class="relative h-3/4 lg:h-full w-full">
+<div class="relative h-3/4 w-full lg:h-full">
 	<div
 		class="absolute left-0 top-0 flex h-full w-full flex-col justify-center bg-black/50 lg:items-center"
 	>
@@ -30,7 +30,7 @@
 	</div>
 	<img alt="Bespoke 13" src="/hero.jpg" class="h-full w-full object-cover" />
 </div>
-<Container class="grid-cols-2 lg:grid flex flex-col gap-12 lg:gap-32">
+<Container class="flex grid-cols-2 flex-col gap-12 lg:grid lg:gap-32">
 	<div class="lg:flex lg:flex-col lg:justify-center">
 		<Title subtitle="over ons">Ik neem jou mee tijdens het gehele proces</Title>
 		<Paragraph>
@@ -47,19 +47,49 @@
 			</Button>
 		</div>
 	</div>
-	<img alt="Bespoke 13" src="/hero.jpg" class="lg:h-[32rem] h-[23rem] w-full object-cover rounded-xl" />
+	<img
+		alt="Bespoke 13"
+		src="/hero.jpg"
+		class="h-[23rem] w-full rounded-xl object-cover lg:h-[32rem]"
+	/>
 </Container>
 <Container>
 	<Title subtitle="Onze projecten" centered>
-		De meest recente projecten<br/>
+		De meest recente projecten<br />
 		die zijn opgeleverd
 	</Title>
-	<div class="grid grid-cols-11 gap-6">
-		<ProjectCard class="col-span-5" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
-		<ProjectCard class="col-span-3" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
-		<ProjectCard class="col-span-3" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
-		<ProjectCard class="col-span-3" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
-		<ProjectCard class="col-span-3" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
-		<ProjectCard class="col-span-5" title="Ruimte in de binnenstad" image="/tmp/project-example.jpg"></ProjectCard>
+	<div class="md:grid md:grid-cols-12 lg:grid-cols-11 flex flex-col gap-6">
+		<ProjectCard class="col-span-6 lg:col-span-5" title="Ruimte in de binnenstad" description="Een keuken in een monumentaal pand mag net wat extra's hebben. Zo kan de bijzondere marmerlook achterplaat helemaal oplichten." image="/tmp/project-example.jpg"
+		></ProjectCard>
+		<ProjectCard
+			class="col-span-6 lg:col-span-3"
+			title="Het complete plaatje"
+			description="De gehele boerderij wordt verduurzaamd, krijgt een nieuwe gevel en een nieuw dak. Aan de voorzijde wordt uitgebouw om ruimte te maken voor een ruime leefkeuken."
+			image="/tmp/project-example-2.jpg"
+		></ProjectCard>
+		<ProjectCard
+			class="col-span-6 lg:col-span-3"
+			title="In contact met elkaar"
+			description="Deze royale vrijstaande woning in Ede herkende ook de opdrachtgever na de verbouwing niet meer terug."
+			image="/tmp/project-example-3.jpg"
+		></ProjectCard>
+		<ProjectCard
+			class="col-span-6 lg:col-span-3"
+			title="Een 4 seizoenen tuin"
+			description="Corrie en Fred hadden behoefte aan meer ruimte voor het gezin. Een extra eet- en borrelruimte samen met een afsluitbare overkapping vormde hiervoor de perfecte oplossing."
+			image="/tmp/project-example-4.jpg"
+		></ProjectCard>
+		<ProjectCard
+			class="col-span-6 lg:col-span-3"
+			title="Meegroeien met je woning"
+			description="Sarah en Jeffrey hadden met de groei van de kleine Noa behoefte aan meer ruimte. Met een tuin die niet in de zon staat was veel daglicht erg belangrijk."
+			image="/tmp/project-example-5.jpg"
+		></ProjectCard>
+		<ProjectCard
+			class="col-span-6 lg:col-span-5"
+			title="Van Koude Garage naar Warme Leefruimte"
+			description="Reinier had als zelfstandig ondernemer een nieuwe werkplek nodig. Als gezin van 5 was er behoefte aan meer gestructureerde berging en een gave veranda."
+			image="/tmp/project-example-6.jpg"
+		></ProjectCard>
 	</div>
 </Container>
