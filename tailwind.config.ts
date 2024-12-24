@@ -10,6 +10,7 @@ export default {
 		extend: {
 			colors: {
 				"theme-blue": "#4e6e80",
+				"theme-blue-light": "#718B99",
 				"theme-gray": "#717070"
 			},
 			fontFamily: {

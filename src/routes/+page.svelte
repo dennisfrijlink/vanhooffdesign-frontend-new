@@ -3,15 +3,16 @@
 	import { Container } from '$lib/components/Container';
 	import { Paragraph } from '$lib/components/Paragraph';
 	import { ProjectCard } from '$lib/components/Project';
+	import { ServiceCard } from '$lib/components/Service/';
 	import { Title } from '$lib/components/Title';
 	import { MoveRight } from 'lucide-svelte';
 </script>
 
-<div class="relative h-3/4 w-full lg:h-full">
+<div class="relative w-full h-[45rem] lg:h-auto">
 	<div
 		class="absolute left-0 top-0 flex h-full w-full flex-col justify-center bg-black/50 lg:items-center"
 	>
-		<img alt="Van Hooff Design Icoon" src="/icon.svg" class="mx-auto h-auto w-16" />
+		<img alt="Van Hooff Design Icoon" src="/icon-white.svg" class="mx-auto h-auto w-16" />
 		<h1
 			class="text-center font-poppins text-3xl font-semibold leading-snug text-white lg:text-7xl lg:leading-snug"
 		>
@@ -58,38 +59,90 @@
 		De meest recente projecten<br />
 		die zijn opgeleverd
 	</Title>
-	<div class="md:grid md:grid-cols-12 lg:grid-cols-11 flex flex-col gap-6">
-		<ProjectCard class="col-span-6 lg:col-span-5" title="Ruimte in de binnenstad" description="Een keuken in een monumentaal pand mag net wat extra's hebben. Zo kan de bijzondere marmerlook achterplaat helemaal oplichten." image="/tmp/project-example.jpg"
-		></ProjectCard>
+	<div class="flex flex-col gap-6 md:grid md:grid-cols-12 lg:grid-cols-11 mb-10">
+		<ProjectCard
+			class="col-span-6 lg:col-span-5"
+			title="Ruimte in de binnenstad"
+			image="/tmp/project-example.jpg"
+			tags={["Keuken", "Interieur"]}
+		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-3"
 			title="Het complete plaatje"
-			description="De gehele boerderij wordt verduurzaamd, krijgt een nieuwe gevel en een nieuw dak. Aan de voorzijde wordt uitgebouw om ruimte te maken voor een ruime leefkeuken."
 			image="/tmp/project-example-2.jpg"
-		></ProjectCard>
+			tags={["Keuken", "Tuin"]}
+		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-3"
 			title="In contact met elkaar"
-			description="Deze royale vrijstaande woning in Ede herkende ook de opdrachtgever na de verbouwing niet meer terug."
 			image="/tmp/project-example-3.jpg"
-		></ProjectCard>
+			tags={["Keuken", "Interieur"]}
+		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-3"
 			title="Een 4 seizoenen tuin"
-			description="Corrie en Fred hadden behoefte aan meer ruimte voor het gezin. Een extra eet- en borrelruimte samen met een afsluitbare overkapping vormde hiervoor de perfecte oplossing."
 			image="/tmp/project-example-4.jpg"
-		></ProjectCard>
+			tags={["Keuken", "Interieur"]}
+		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-3"
 			title="Meegroeien met je woning"
-			description="Sarah en Jeffrey hadden met de groei van de kleine Noa behoefte aan meer ruimte. Met een tuin die niet in de zon staat was veel daglicht erg belangrijk."
 			image="/tmp/project-example-5.jpg"
-		></ProjectCard>
+			tags={["Keuken", "Interieur"]}
+		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-5"
 			title="Van Koude Garage naar Warme Leefruimte"
-			description="Reinier had als zelfstandig ondernemer een nieuwe werkplek nodig. Als gezin van 5 was er behoefte aan meer gestructureerde berging en een gave veranda."
 			image="/tmp/project-example-6.jpg"
-		></ProjectCard>
+			tags={["Keuken", "Interieur"]}
+		/>
+	</div>
+	<Button class="mx-auto">
+		Bekijk alle projecten
+		<MoveRight color="#ffffff" />
+	</Button>
+</Container>
+<Container>
+	<div class="lg:grid lg:grid-cols-2 mb-10">
+		<div>
+			<Title subtitle="Onze werkwijze">
+				De 7 stappen tot het nieuwe design
+			</Title>
+			<Button class="max-lg:hidden">
+				Bekijk de details van onze werkwijze
+				<MoveRight color="#ffffff" />
+			</Button>
+		</div>
+		<Paragraph>
+			Van Hooff Design is een ontwerpbureau gespecialiseerd in uitbouw, maatwerk interieur, 
+			transformatie en renovatie. Samen met jou bedenk, ontwerp en realiseer ik jouw droomhuis.
+		</Paragraph>
+		<Button class="lg:hidden mt-9">
+			Bekijk de details van onze werkwijze
+			<MoveRight color="#ffffff" />
+		</Button>
+	</div>
+	<div class="lg:grid lg:grid-cols-12 flex flex-col gap-5">
+		<ServiceCard title="Kennismaking" class="bg-[#3d7385] col-span-3">
+			We are a leading architecture firm dedicated to creating designs.
+		</ServiceCard>
+		<ServiceCard title="Schetsontwerp" class="bg-[#264b69] col-span-3">
+			We are a leading architecture firm dedicated to creating designs.
+		</ServiceCard>
+		<ServiceCard title="Voorontwerp" class="bg-[#588ea7] col-span-3">
+			We are a leading architecture firm dedicated to creating designs.
+		</ServiceCard>
+		<ServiceCard title="Definitief ontwerp" class="bg-[#264b69] col-span-3">
+			We are a leading architecture firm dedicated to creating designs.
+		</ServiceCard>
+		<ServiceCard title="Technische uitwerking" class="bg-[#588ea7] col-span-3 col-start-3">
+			We are a leading architecture firm dedicated to creating designs.
+		</ServiceCard>
+		<ServiceCard title="Vergunningsaanvraag" class="bg-[#3d7385] col-span-3">
+			We are a leading architecture firm dedicated to creating designs.
+		</ServiceCard>
+		<ServiceCard title="Bouwbegeleiding" class="bg-[#588ea7] col-span-3">
+			We are a leading architecture firm dedicated to creating designs.
+		</ServiceCard>
 	</div>
 </Container>

@@ -9,9 +9,11 @@
 	let { children }: Props = $props();
 
 	import '../app.css';
+	import { Footer } from '$lib/components/Footer';
 </script>
 
 <Navbar/>
-<main class="h-full">
+<main class="min-h-full">
 	{@render children()}
 </main>
+<Footer/>
