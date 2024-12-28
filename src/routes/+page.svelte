@@ -8,7 +8,7 @@
 	import { MoveRight } from 'lucide-svelte';
 </script>
 
-<div class="relative w-full h-[45rem] lg:h-auto">
+<div class="relative h-[45rem] w-full lg:h-auto">
 	<div
 		class="absolute left-0 top-0 flex h-full w-full flex-col justify-center bg-black/50 lg:items-center"
 	>
@@ -59,89 +59,95 @@
 		De meest recente projecten<br />
 		die zijn opgeleverd
 	</Title>
-	<div class="flex flex-col gap-6 md:grid md:grid-cols-12 lg:grid-cols-11 mb-10">
+	<div class="mb-10 flex flex-col gap-6 md:grid md:grid-cols-12 lg:grid-cols-11">
 		<ProjectCard
 			class="col-span-6 lg:col-span-5"
 			title="Ruimte in de binnenstad"
 			image="/tmp/project-example.jpg"
-			tags={["Keuken", "Interieur"]}
+			tags={['Keuken', 'Interieur']}
+			year="2019"
 		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-3"
 			title="Het complete plaatje"
 			image="/tmp/project-example-2.jpg"
-			tags={["Keuken", "Tuin"]}
+			tags={['Keuken', 'Tuin']}
+			year="2020"
 		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-3"
 			title="In contact met elkaar"
 			image="/tmp/project-example-3.jpg"
-			tags={["Keuken", "Interieur"]}
+			tags={['Keuken', 'Interieur']}
+			year="2021"
 		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-3"
 			title="Een 4 seizoenen tuin"
 			image="/tmp/project-example-4.jpg"
-			tags={["Keuken", "Interieur"]}
+			tags={['Keuken', 'Interieur']}
+			year="2022"
 		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-3"
 			title="Meegroeien met je woning"
 			image="/tmp/project-example-5.jpg"
-			tags={["Keuken", "Interieur"]}
+			tags={['Keuken', 'Interieur']}
+			year="2023"
 		/>
 		<ProjectCard
 			class="col-span-6 lg:col-span-5"
 			title="Van Koude Garage naar Warme Leefruimte"
 			image="/tmp/project-example-6.jpg"
-			tags={["Keuken", "Interieur"]}
+			tags={['Keuken', 'Interieur']}
+			year="2024"
 		/>
 	</div>
-	<Button class="mx-auto">
-		Bekijk alle projecten
-		<MoveRight color="#ffffff" />
-	</Button>
+	<a href="/projecten">
+		<Button class="mx-auto">
+			Bekijk alle projecten
+			<MoveRight color="#ffffff" />
+		</Button>
+	</a>
 </Container>
 <Container>
-	<div class="lg:grid lg:grid-cols-2 mb-10">
+	<div class="mb-10 lg:grid lg:grid-cols-2">
 		<div>
-			<Title subtitle="Onze werkwijze">
-				De 7 stappen tot het nieuwe design
-			</Title>
+			<Title subtitle="Onze werkwijze">De 7 stappen tot het nieuwe design</Title>
 			<Button class="max-lg:hidden">
 				Bekijk de details van onze werkwijze
 				<MoveRight color="#ffffff" />
 			</Button>
 		</div>
 		<Paragraph>
-			Van Hooff Design is een ontwerpbureau gespecialiseerd in uitbouw, maatwerk interieur, 
+			Van Hooff Design is een ontwerpbureau gespecialiseerd in uitbouw, maatwerk interieur,
 			transformatie en renovatie. Samen met jou bedenk, ontwerp en realiseer ik jouw droomhuis.
 		</Paragraph>
-		<Button class="lg:hidden mt-9">
+		<Button class="mt-9 lg:hidden">
 			Bekijk de details van onze werkwijze
 			<MoveRight color="#ffffff" />
 		</Button>
 	</div>
-	<div class="lg:grid lg:grid-cols-12 flex flex-col gap-5">
-		<ServiceCard title="Kennismaking" class="bg-[#3d7385] col-span-3">
+	<div class="flex flex-col gap-5 lg:grid lg:grid-cols-12">
+		<ServiceCard title="Kennismaking" class="col-span-3 bg-[#3d7385]">
 			We are a leading architecture firm dedicated to creating designs.
 		</ServiceCard>
-		<ServiceCard title="Schetsontwerp" class="bg-[#264b69] col-span-3">
+		<ServiceCard title="Schetsontwerp" class="col-span-3 bg-[#264b69]">
 			We are a leading architecture firm dedicated to creating designs.
 		</ServiceCard>
-		<ServiceCard title="Voorontwerp" class="bg-[#588ea7] col-span-3">
+		<ServiceCard title="Voorontwerp" class="col-span-3 bg-[#588ea7]">
 			We are a leading architecture firm dedicated to creating designs.
 		</ServiceCard>
-		<ServiceCard title="Definitief ontwerp" class="bg-[#264b69] col-span-3">
+		<ServiceCard title="Definitief ontwerp" class="col-span-3 bg-[#264b69]">
 			We are a leading architecture firm dedicated to creating designs.
 		</ServiceCard>
-		<ServiceCard title="Technische uitwerking" class="bg-[#588ea7] col-span-3 col-start-3">
+		<ServiceCard title="Technische uitwerking" class="col-span-3 col-start-3 bg-[#588ea7]">
 			We are a leading architecture firm dedicated to creating designs.
 		</ServiceCard>
-		<ServiceCard title="Vergunningsaanvraag" class="bg-[#3d7385] col-span-3">
+		<ServiceCard title="Vergunningsaanvraag" class="col-span-3 bg-[#3d7385]">
 			We are a leading architecture firm dedicated to creating designs.
 		</ServiceCard>
-		<ServiceCard title="Bouwbegeleiding" class="bg-[#588ea7] col-span-3">
+		<ServiceCard title="Bouwbegeleiding" class="col-span-3 bg-[#588ea7]">
 			We are a leading architecture firm dedicated to creating designs.
 		</ServiceCard>
 	</div>
