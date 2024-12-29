@@ -29,7 +29,7 @@
 			</div>
 		</Container>
 	</div>
-	<img alt="Bespoke 13" src="/hero.jpg" class="h-full w-full object-cover" />
+	<img alt="Bespoke 13" src="/hero-compressed.jpg" class="h-full w-full object-cover" />
 </div>
 <Container class="flex grid-cols-2 flex-col gap-12 lg:grid lg:gap-32">
 	<div class="lg:flex lg:flex-col lg:justify-center">
@@ -50,7 +50,7 @@
 	</div>
 	<img
 		alt="Bespoke 13"
-		src="/hero.jpg"
+		src="/hero-compressed.jpg"
 		class="h-[23rem] w-full rounded-xl object-cover lg:h-[32rem]"
 	/>
 </Container>

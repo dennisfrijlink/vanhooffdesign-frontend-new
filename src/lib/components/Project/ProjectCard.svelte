@@ -29,8 +29,8 @@
                     {/each}
                 </div>
             </div>
-            <button class="rounded-full bg-white p-2 group-hover:bg-black duration-100" aria-labelledby={`project-${projectId}`}>
-                <ArrowUpRight class="stroke-black h-4 w-auto group-hover:stroke-white duration-100" />
+            <button class="rounded-full bg-white p-2 lg:group-hover:bg-black duration-100" aria-labelledby={`project-${projectId}`}>
+                <ArrowUpRight class="stroke-black h-4 w-auto lg:group-hover:stroke-white duration-100" />
                 <span id={`project-${projectId}`} hidden>Ga naar het project, {title}</span>
             </button>
         </div>

@@ -11,9 +11,9 @@
     let { children, href = "/", invert = false }: Props = $props();
 </script>
 
-<NavigationMenu.Item>
-    <NavigationMenu.Link class="group" href={href}>
-        <span class="font-medium group-hover:underline underline-offset-4" class:text-white={invert}>
+<NavigationMenu.Item class="flex max-sm:border-b">
+    <NavigationMenu.Link class="group flex-1 p-5 lg:p-0" href={href}>
+        <span class={`lg:font-medium font-semibold lg:group-hover:underline underline-offset-4 ${invert ? "lg:text-white" : "text-black" }`}>
             {@render children()}
         </span>
     </NavigationMenu.Link>
