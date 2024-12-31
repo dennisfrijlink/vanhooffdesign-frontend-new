@@ -26,7 +26,10 @@
 </script>
 
 <header 
-	class="w-full px-4 lg:px-12 py-4 justify-between lg:justify-start flex items-center z-10 absolute border-black border-opacity-10 border-b-0 bg-transparent"
+	class={`
+		w-full px-4 lg:px-12 py-4 justify-between lg:justify-start flex items-center z-10 absolute border-black border-opacity-10 border-b-0 bg-transparent 
+		${mobileVisible && "bg-white z-50"}
+	`}
 	class:!relative={!isHome}
 	class:!border-b={!isHome}
 >
