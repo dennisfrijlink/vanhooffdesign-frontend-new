@@ -5,7 +5,7 @@
 	import NavbarItem from './NavbarItem.svelte';
 	import { onMount } from 'svelte';
 
-	let isHome: boolean = $state(false);
+	let isHome: boolean = $state(true);
 	let mobileVisible: boolean = $state(false);
 
 	onMount(() => {
@@ -26,13 +26,13 @@
 </script>
 
 <header 
-	class="w-full px-4 lg:px-12 py-6 justify-between lg:justify-start flex items-center z-10 border-b"
-	class:absolute={isHome}
-	class:border-none={isHome}
+	class="w-full px-4 lg:px-12 py-4 justify-between lg:justify-start flex items-center z-10 absolute border-black border-opacity-10 border-b-0 bg-transparent"
+	class:!relative={!isHome}
+	class:!border-b={!isHome}
 >
 	<a href="/">
 		<img 
-			class={`w-auto relative h-12 lg:h-16 lg:mr-16 z-50 ${isHome && !mobileVisible ? "invert" : ""}`}
+			class={`w-auto relative h-12 lg:h-14 lg:mr-16 z-50 ${isHome && !mobileVisible ? "invert" : ""}`}
 			src="/logo.svg" 
 			loading="eager" 
 			alt="Van Hooff Design Logo"
@@ -40,7 +40,7 @@
 	</a>
 	<NavigationMenu.Root class={`lg:block max-sm:fixed max-sm:pt-24 max-sm:w-full max-sm:h-full z-40 left-0 top-0 max-sm:bg-white ${mobileVisible ? "block" : "hidden"}`} role="navigation">
 		<NavigationMenu.List class="lg:flex lg:items-center lg:gap-8">
-			<NavbarItem invert={isHome} href="/">Werkwijze</NavbarItem>
+			<NavbarItem invert={isHome} href="/werkwijze">Werkwijze</NavbarItem>
 			<NavbarItem invert={isHome} href="/projecten">Projecten</NavbarItem>
 			<NavbarItem invert={isHome} href="/">Over ons</NavbarItem>
 			<NavbarItem invert={isHome} href="/">Blog</NavbarItem>

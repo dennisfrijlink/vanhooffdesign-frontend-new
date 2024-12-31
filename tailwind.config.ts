@@ -11,6 +11,7 @@ export default {
 			colors: {
 				"theme-blue": "#4e6e80",
 				"theme-blue-light": "#718B99",
+				"theme-blue-extra-light": "#E4ECED",
 				"theme-gray": "#717070"
 			},
 			fontFamily: {
