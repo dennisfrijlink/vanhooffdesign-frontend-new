@@ -1,12 +1,3 @@
 {
-	"rewrites": [
-		{
-			"source": "^200\\.html$",
-			"destination": "/200.html"
-		},
-		{
-			"source": "/(.*)",
-			"destination": "/200.html"
-		}
-	]
+	"routes": [{ "handle": "filesystem" }, { "src": "/(.*)", "dest": "/index.html" }]
 }
