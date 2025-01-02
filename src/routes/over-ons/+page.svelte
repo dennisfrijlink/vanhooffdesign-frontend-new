@@ -11,16 +11,19 @@
 		}
 	</style>
 </svelte:head>
-<Container class="!mb-40 !mt-20 relative">
-<img class="absolute right-0 top-0 h-auto w-96 opacity-20 z-10 translate-x-1/2" src="/icon.svg" alt="" />
-
+<Container class="relative !mb-40 !mt-20">
+	<img
+		class="absolute right-0 top-0 z-10 h-auto w-96 translate-x-1/2 opacity-20"
+		src="/icon.svg"
+		alt=""
+	/>
 	<Title
 		subtitle="Over ons"
 		centered
-		class="mx-auto w-1/2 text-pretty lg:text-4xl lg:leading-normal"
+		class="mx-auto lg:w-1/2 text-pretty lg:text-4xl lg:leading-normal"
 		>Ik neem jou mee tijdens het gehele proces.</Title
 	>
-	<Paragraph class="mx-auto w-1/2 text-center">
+	<Paragraph class="mx-auto lg:w-1/2 text-center max-sm:text-sm max-sm:leading-loose">
 		Van jongs af aan is ontwerpen mijn passie. Of het nu ging om tekenen of een object creëren,
 		beide vond ik geweldig! Creatief bezig zijn, daar ging het mij om. Later ontwikkelde ik een
 		passie voor architectuur. Verschillende vormen, structuren en zichtlijnen kunnen een ruimte
@@ -55,7 +58,7 @@
 		class="h-[23rem] w-full rounded-xl object-cover lg:h-[32rem]"
 	/>
 </Container>
-<Container class="flex grid-cols-2 flex-col gap-12 lg:grid lg:gap-32">
+<Container class="flex grid-cols-2 flex-col-reverse gap-12 lg:grid lg:gap-32">
 	<img
 		alt="Bespoke 13"
 		src="/tmp/project-example-4.jpg"
@@ -76,7 +79,7 @@
 </Container>
 <Container class="flex grid-cols-2 flex-col gap-12 lg:grid lg:gap-32">
 	<div>
-		<Title subtitle="Service" class="text-[#1D513C]">Duurzaam</Title>
+		<Title subtitle="Service" class="!text-[#1D513C]">Duurzaam</Title>
 		<Paragraph class="text-sm">
 			Ik denk na over de levensloop van een gebouw. Waar zich nu een bijkeuken en eetkamer bevinden,
 			daar kan over 20 jaar zomaar een slaapkamer met badkamer zijn. Duurzaamheid is dus niet enkel
