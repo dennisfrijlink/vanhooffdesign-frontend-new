@@ -45,7 +45,7 @@
 		<NavigationMenu.List class="lg:flex lg:items-center lg:gap-8">
 			<NavbarItem invert={isHome} href="/werkwijze">Werkwijze</NavbarItem>
 			<NavbarItem invert={isHome} href="/projecten">Projecten</NavbarItem>
-			<NavbarItem invert={isHome} href="/">Over ons</NavbarItem>
+			<NavbarItem invert={isHome} href="/over-ons">Over ons</NavbarItem>
 			<NavbarItem invert={isHome} href="/">Blog</NavbarItem>
 			<NavbarItem invert={isHome} href="/">Contact</NavbarItem>
 		</NavigationMenu.List>

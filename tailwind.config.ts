@@ -12,7 +12,8 @@ export default {
 				"theme-blue": "#4e6e80",
 				"theme-blue-light": "#718B99",
 				"theme-blue-extra-light": "#E4ECED",
-				"theme-gray": "#717070"
+				"theme-gray": "#717070",
+				"theme-brown-light": "#D2CFCC"
 			},
 			fontFamily: {
 				poppins: ["poppins", ...defaultTheme.fontFamily.sans],
