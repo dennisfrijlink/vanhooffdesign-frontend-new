@@ -6,13 +6,15 @@
 
 <Container class="!mt-20">
 	<Title subtitle="Onze projecten">De resultaten waar we trots op zijn</Title>
-	<div class="flex flex-col lg:grid grid-cols-2 gap-6">
-		<ProjectCard
-			title="Ruimte in de binnenstad"
-			image="/tmp/project-example.jpg"
-			tags={['Keuken', 'Interieur']}
-			year="2019"
-		/>
+	<div class="flex grid-cols-2 flex-col gap-6 lg:grid">
+		<a href="/projecten/ruimte-in-de-binnenstad">
+			<ProjectCard
+				title="Ruimte in de binnenstad"
+				image="/tmp/project-example.jpg"
+				tags={['Keuken', 'Interieur']}
+				year="2019"
+			/>
+		</a>
 		<ProjectCard
 			title="Het complete plaatje"
 			image="/tmp/project-example-2.jpg"

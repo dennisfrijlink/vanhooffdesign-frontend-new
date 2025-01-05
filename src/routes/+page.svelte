@@ -8,7 +8,7 @@
 	import { MoveRight } from 'lucide-svelte';
 </script>
 
-<div class="relative h-[45rem] w-full lg:h-auto">
+<div class="relative h-[45rem] w-full lg:h-[100svh]">
 	<div
 		class="absolute left-0 top-0 flex h-full w-full flex-col justify-center bg-black/50 lg:items-center"
 	>

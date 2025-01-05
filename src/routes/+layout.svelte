@@ -13,7 +13,7 @@
 </script>
 
 <Navbar/>
-<main class="min-h-full">
+<main>
 	{@render children()}
 </main>
 <Footer/>

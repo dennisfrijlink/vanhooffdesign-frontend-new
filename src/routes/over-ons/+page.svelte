@@ -11,6 +11,7 @@
 		}
 	</style>
 </svelte:head>
+
 <Container class="relative !mb-40 !mt-20">
 	<img
 		class="absolute right-0 top-0 z-10 h-auto w-96 translate-x-1/2 opacity-20"
