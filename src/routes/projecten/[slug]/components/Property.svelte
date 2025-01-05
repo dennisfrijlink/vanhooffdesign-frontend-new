@@ -7,7 +7,7 @@
     let { description, content }: Props = $props();
 </script>
 
-<li class="p-5 flex flex-col justify-center items-center max-lg:border-b lg:border-r last:border-none">
-    <span class="text-theme-gray uppercase tracking-[0.2rem] leading-loose text-xs font-extrabold">{description}</span>
-    <span class="font-medium leading-loose text-lg">{content}</span>
+<li class="flex flex-col lg:mb-8 last:mb-0">
+    <span class="text-white text-opacity-50 uppercase tracking-[0.2rem] leading-loose text-base font-bold">{description}</span>
+    <span class="font-medium text-white leading-loose text-2xl">{content}</span>
 </li>
