@@ -1,9 +1,16 @@
 <script lang="ts">
-	import { Button } from '$lib/components/Button';
 	import { Container } from '$lib/components/Container';
-	import { ChevronRight, MoveRight } from 'lucide-svelte';
+	import { fade, blur, crossfade, slide } from 'svelte/transition';
+	import { ChevronRight } from 'lucide-svelte';
 	import Property from './components/Property.svelte';
 	import Paragraph from './components/Paragraph.svelte';
+
+	const images: string[] = [
+		'/tmp/project-example-5.jpg',
+		'/tmp/project-example-6.jpg',
+		'/tmp/project-example-7.jpg'
+	];
+	let currentImage: string = '/tmp/project-example-5.jpg';
 </script>
 
 <svelte:head>
@@ -51,45 +58,61 @@
 </div>
 
 <Container>
+	<ul class="mb-10 flex gap-5 lg:gap-0 flex-col lg:flex-row lg:justify-evenly">
+		<Property content="2022" description="jaar" />
+		<Property content="Buren" description="locatie" />
+		<Property content="Piet & Jan" description="opdrachtgever" />
+		<Property content="Renovatie en Uitbouw" description="particulier" />
+	</ul>
 	<img class="rounded-2xl" src="/tmp/project-example-4.jpg" alt="" />
 </Container>
 <Container>
-	<div class="lg:grid lg:grid-cols-[60%_auto] xl:grid-cols-[70%_auto] flex flex-col-reverse max-lg:gap-24">
-		<div class="xl:pr-40 lg:pr-20 flex flex-col gap-10">
-			<Paragraph title="De vraag">
-				Voor dit project kregen we de opdracht om een gezinswoning te ontwerpen die zowel
-				functioneel als esthetisch aantrekkelijk is. De wensen van de opdrachtgevers waren helder:
-				een open leefruimte, een ruime keuken, vier slaapkamers en een grote tuin. We hebben deze
-				wensen vertaald naar een ontwerp met een moderne architectuur en een warme uitstraling.
-				<br/><br/>
-				Bijzondere aandacht is besteed aan de lichtinval en de routing in het huis. Grote ramen
-				zorgen voor veel natuurlijk licht en een open verbinding met de tuin. De indeling is logisch
-				en praktisch, met voldoende privacy voor alle gezinsleden.
-			</Paragraph>
-			<img src="/tmp/project-example-5.jpg" alt="" />
-			<Paragraph title="Het resultaat">
-				Voor dit project kregen we de opdracht om een gezinswoning te ontwerpen die zowel
-				functioneel als esthetisch aantrekkelijk is. De wensen van de opdrachtgevers waren helder:
-				een open leefruimte, een ruime keuken, vier slaapkamers en een grote tuin. We hebben deze
-				wensen vertaald naar een ontwerp met een moderne architectuur en een warme uitstraling.
-			</Paragraph>
-			<img src="/tmp/project-example-6.jpg" alt="" />
-			<img src="/tmp/project-example-7.jpg" alt="" />
+	<div class="flex flex-col-reverse max-lg:gap-24 lg:grid lg:grid-cols-[auto_60%] xl:grid-cols-2">
+		<div class="relative max-md:hidden">
+			{#each images as image, index}
+				{#if currentImage === image}
+					<img
+						class="h-[30rem] absolute rounded-2xl object-cover"
+						style="transform: translateY({index * 480 + 50}px);"
+						src={image}
+						alt=""
+						transition:fade={{ duration: 100 }}
+					/>
+				{/if}
+			{/each}
 		</div>
-		<div
-			class="relative lg:self-start overflow-hidden rounded-lg bg-theme-blue p-10 shadow-xl lg:sticky lg:top-10"
-		>
-			<ul class="relative z-20 max-lg:grid grid-cols-1 md:grid-cols-2 max-lg:gap-8">
-				<Property content="2022" description="jaar" />
-				<Property content="Buren" description="locatie" />
-				<Property content="Piet & Jan" description="opdrachtgever" />
-				<Property content="Renovatie en Uitbouw" description="particulier" />
-			</ul>
-			<img
-				alt="Van Hooff Design Icoon"
-				src="/icon-white.svg"
-				class="absolute bottom-0 right-0 z-10 h-auto w-56 translate-x-1/3 translate-y-1/3 opacity-20"
-			/>
+		<div class="lg:hidden flex flex-col gap-10">
+			{#each images as image}
+					<img
+						class="h-[20rem] rounded-lg object-cover"
+						src={image}
+						alt=""
+					/>
+			{/each}
+		</div>
+		<div class="flex flex-col gap-20 lg:pl-20 xl:pl-40">
+			<Paragraph title="De vraag" relatedImage="/tmp/project-example-5.jpg" bind:currentImage>
+				Voor dit project kregen we de opdracht om een gezinswoning te ontwerpen die zowel
+				functioneel als esthetisch aantrekkelijk is. De wensen van de opdrachtgevers waren helder:
+				een open leefruimte, een ruime keuken, vier slaapkamers en een grote tuin. We hebben deze
+				wensen vertaald naar een ontwerp met een moderne architectuur en een warme uitstraling.
+				<br /><br />
+				Bijzondere aandacht is besteed aan de lichtinval en de routing in het huis. Grote ramen zorgen
+				voor veel natuurlijk licht en een open verbinding met de tuin. De indeling is logisch en praktisch,
+				met voldoende privacy voor alle gezinsleden.
+			</Paragraph>
+			<Paragraph title="Het proces" relatedImage="/tmp/project-example-6.jpg" bind:currentImage>
+				Voor dit project kregen we de opdracht om een gezinswoning te ontwerpen die zowel
+				functioneel als esthetisch aantrekkelijk is. De wensen van de opdrachtgevers waren helder:
+				een open leefruimte, een ruime keuken, vier slaapkamers en een grote tuin. We hebben deze
+				wensen vertaald naar een ontwerp met een moderne architectuur en een warme uitstraling.
+			</Paragraph>
+			<Paragraph title="Het resultaat" relatedImage="/tmp/project-example-7.jpg" bind:currentImage>
+				Voor dit project kregen we de opdracht om een gezinswoning te ontwerpen die zowel
+				functioneel als esthetisch aantrekkelijk is. De wensen van de opdrachtgevers waren helder:
+				een open leefruimte, een ruime keuken, vier slaapkamers en een grote tuin. We hebben deze
+				wensen vertaald naar een ontwerp met een moderne architectuur en een warme uitstraling.
+			</Paragraph>
 		</div>
 	</div>
 </Container>

@@ -1,19 +1,35 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 
 	interface Props {
 		title?: string;
 		children: Snippet;
+		relatedImage?: string;
+		currentImage?: string
 	}
 
-	let { title, children }: Props = $props();
+	onMount(() => {
+		const observer = new IntersectionObserver(entries => {
+			const entry = entries[0];
+			if(entry.isIntersecting) {
+				if (entry.intersectionRatio >= 0.75) {
+					currentImage = relatedImage;
+				}
+			}
+		}, { threshold: [0.0, 0.75]})
+		let el: HTMLElement | null = null;
+		if(title) el = document.getElementById(title);
+		if(el) observer.observe(el)
+	})
+
+	let { title, children, relatedImage, currentImage = $bindable() }: Props = $props();
 </script>
 
-<div>
-{#if title}
-	<h2 class="text-4xl font-semibold mb-7">{title}</h2>
-{/if}
-<p class="text-lg leading-loose font-medium text-pretty">
-	{@render children()}
-</p>
+<div id={title}>
+	{#if title}
+		<h2 class="mb-7 text-4xl font-semibold">{title}</h2>
+	{/if}
+	<p class="text-pretty text-lg font-medium leading-loose">
+		{@render children()}
+	</p>
 </div>
