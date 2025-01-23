@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Container } from '$lib/components/Container';
-	import { fade, blur, crossfade, slide } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { ChevronRight } from 'lucide-svelte';
 	import Property from './components/Property.svelte';
 	import Paragraph from './components/Paragraph.svelte';

@@ -7,7 +7,7 @@
 <svelte:head>
 	<style>
 		html {
-			@apply bg-theme-blue-extra-light;
+			@apply bg-theme-brown-light;
 		}
 	</style>
 </svelte:head>

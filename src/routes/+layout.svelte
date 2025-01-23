@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Navbar } from '$lib/components/Navigation';
+	import { Footer } from '$lib/components/Footer';
 	import type { Snippet } from 'svelte';
 
 	interface Props {
@@ -9,7 +10,6 @@
 	let { children }: Props = $props();
 
 	import '../app.css';
-	import { Footer } from '$lib/components/Footer';
 </script>
 
 <Navbar/>
