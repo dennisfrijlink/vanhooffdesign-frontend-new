@@ -8,6 +8,9 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
+			screens: {
+				'3xl': '1600px'
+			},
 			animation: {
 				fade: 'fadeIn .25s ease-in-out',
 			},

@@ -16,7 +16,9 @@
 		>Een kijkje achter de schermen<br />bij de werkwijze van Hooff Design</Title
 	>
 </Container>
-<img class="h-96 w-full object-cover" src="/tmp/sketch-1.jpg" alt="" />
+<div class="w-full h-96 3xl:h-[35rem] overflow-hidden shadow-inner">
+	<img class="h-full w-full object-cover -z-10 relative" src="/tmp/sketch-1.jpg" alt="" />
+</div>
 <div>
 	<StepBlock
 		title="Kennismaking"
