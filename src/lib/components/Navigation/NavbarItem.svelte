@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { NavigationMenu } from 'bits-ui';
 	import type { Snippet } from 'svelte';
+	import { page } from '$app/stores';
 
 	interface Props {
 		href: string;

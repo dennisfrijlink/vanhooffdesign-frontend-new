@@ -21,7 +21,7 @@
 		</h3>{/if}
 	<h2
 		class:text-center={centered}
-		class={`text-theme-blue font-bold text-3xl leading-normal ${className}`}
+		class={`text-theme-blue font-semibold font-poppins text-3xl leading-normal ${className}`}
 	>
 		{@render children()}
 	</h2>

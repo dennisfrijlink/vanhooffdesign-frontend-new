@@ -8,6 +8,8 @@
 	let isAbsolutePositioned: boolean = $state(true);
 	let mobileVisible: boolean = $state(false);
 
+	const pagesWithAbsoluteNav: string[] = ['/', '/projecten/[slug]'];
+
 	onMount(() => {
 		page.subscribe(() => {
 			mobileVisible = false;
@@ -15,7 +17,7 @@
 	});
 
 	$effect(() => {
-		isAbsolutePositioned = $page.url.pathname === '/' || $page.route.id === '/projecten/[slug]';
+		isAbsolutePositioned = $page.route.id ? pagesWithAbsoluteNav.includes($page.route.id) : false;
 		if (mobileVisible) {
 			document.body.style.overflow = 'hidden';
 		} else {
@@ -49,7 +51,7 @@
 			<NavbarItem invert={isAbsolutePositioned} href="/projecten">Projecten</NavbarItem>
 			<NavbarItem invert={isAbsolutePositioned} href="/over-ons">Over ons</NavbarItem>
 			<NavbarItem invert={isAbsolutePositioned} href="/blog">Blog</NavbarItem>
-			<NavbarItem invert={isAbsolutePositioned} href="/">Contact</NavbarItem>
+			<NavbarItem invert={isAbsolutePositioned} href="/contact">Contact</NavbarItem>
 		</NavigationMenu.List>
 		<NavigationMenu.Viewport />
 	</NavigationMenu.Root>

@@ -5,22 +5,28 @@
 		title?: string;
 		children: Snippet;
 		relatedImage?: string;
-		currentImage?: string
+		currentImage?: string | null;
 	}
 
 	onMount(() => {
-		const observer = new IntersectionObserver(entries => {
-			const entry = entries[0];
-			if(entry.isIntersecting) {
-				if (entry.intersectionRatio >= 0.75) {
-					currentImage = relatedImage;
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const entry = entries[0];
+				if (entry.isIntersecting) {
+					if (entry.intersectionRatio >= 0.75 && currentImage !== relatedImage) {
+						currentImage = null;
+						setTimeout(() => {
+							currentImage = relatedImage;
+						}, 200);
+					}
 				}
-			}
-		}, { threshold: [0.0, 0.75]})
+			},
+			{ threshold: [0.0, 0.75] }
+		);
 		let el: HTMLElement | null = null;
-		if(title) el = document.getElementById(title);
-		if(el) observer.observe(el)
-	})
+		if (title) el = document.getElementById(title);
+		if (el) observer.observe(el);
+	});
 
 	let { title, children, relatedImage, currentImage = $bindable() }: Props = $props();
 </script>

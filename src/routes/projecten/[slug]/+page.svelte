@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Container } from '$lib/components/Container';
-	import { fade } from 'svelte/transition';
+	import { blur } from 'svelte/transition';
 	import { ChevronRight } from 'lucide-svelte';
 	import Property from './components/Property.svelte';
 	import Paragraph from './components/Paragraph.svelte';
@@ -10,7 +10,10 @@
 		'/tmp/project-example-6.jpg',
 		'/tmp/project-example-7.jpg'
 	];
-	let currentImage: string = '/tmp/project-example-5.jpg';
+
+	let currentImage: string | null;
+	let scrollBoxHeight: number;
+	let scrollBoxImage: any;
 </script>
 
 <svelte:head>
@@ -67,27 +70,24 @@
 	<img class="rounded-2xl" src="/tmp/project-example-4.jpg" alt="" />
 </Container>
 <Container>
-	<div class="flex flex-col-reverse max-lg:gap-24 lg:grid lg:grid-cols-[auto_60%] xl:grid-cols-2">
+	<div
+		bind:clientHeight={scrollBoxHeight}
+		class="flex flex-col-reverse max-lg:gap-24 lg:grid lg:grid-cols-[auto_60%] xl:grid-cols-2"
+	>
 		<div class="relative max-md:hidden">
-			{#each images as image, index}
-				{#if currentImage === image}
-					<img
-						class="h-[30rem] absolute rounded-2xl object-cover"
-						style="transform: translateY({index * 480 + 50}px);"
-						src={image}
-						alt=""
-						transition:fade={{ duration: 100 }}
-					/>
-				{/if}
-			{/each}
+			{#if currentImage}
+				<img
+					bind:this={scrollBoxImage}
+					class="h-[30rem] sticky top-24 rounded-2xl object-cover"
+					src={currentImage}
+					alt=""
+					transition:blur={{ duration: 300 }}
+				/>
+			{/if}
 		</div>
 		<div class="lg:hidden flex flex-col gap-10">
 			{#each images as image}
-					<img
-						class="h-[20rem] rounded-lg object-cover"
-						src={image}
-						alt=""
-					/>
+				<img class="h-[20rem] rounded-lg object-cover" src={image} alt="" />
 			{/each}
 		</div>
 		<div class="flex flex-col gap-20 lg:pl-20 xl:pl-40">

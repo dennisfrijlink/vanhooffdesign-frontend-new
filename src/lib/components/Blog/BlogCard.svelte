@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import Paragraph from '../Paragraph/Paragraph.svelte';
 	import Title from '../Title/Title.svelte';
 
@@ -10,19 +9,19 @@
 	let { large }: Props = $props();
 
 	const orientation: string = large
-		? 'md:grid md:grid-cols-[60%_auto] md:col-span-2 md:gap-10 flex-col gap-5'
+		? 'md:grid md:grid-cols-[60%_auto] md:gap-10 flex-col gap-5'
 		: 'flex-col gap-5';
 </script>
 
 <div class={`flex ${orientation} group cursor-pointer`}>
-	<div class="overflow-hidden h-full md:min-h-[23rem] w-full rounded-[10px] relative shadow-2xl">
+	<div class="overflow-hidden h-full w-full rounded-[10px] relative shadow-2xl">
 		<div
 			class="w-full max-sm:hidden h-full bg-white bg-opacity-20 transition-all duration-200 ease-in-out absolute top-0 left-0 z-10 opacity-0 group-hover:opacity-100"
 		></div>
 		<img
 			alt="Bespoke 13"
 			src="/tmp/project-example-4.jpg"
-			class="h-full w-full object-cover lg:group-hover:scale-[1.02] transition-all duration-200 ease-in-out"
+			class="h-full w-full object-cover md:min-h-[23rem] lg:group-hover:scale-[1.02] transition-all duration-200 ease-in-out"
 		/>
 	</div>
 	<div class="py-5">

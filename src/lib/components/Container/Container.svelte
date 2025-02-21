@@ -4,11 +4,14 @@
 	interface Props {
 		children: Snippet;
 		class?: string;
+		fluid?: boolean;
 	}
 
-	let { children, class: className = '' }: Props = $props();
+	let { children, class: className = '', fluid }: Props = $props();
+
+	const defaultClass = fluid ? 'w-4/5' : 'max-w-7xl w-full';
 </script>
 
-<div class={`mx-auto w-full max-w-7xl px-5 my-20 md:mb-24 lg:my-40 ${className}`}>
+<div class={`mx-auto px-5 my-20 md:mb-24 lg:my-40 ${defaultClass} ${className}`}>
 	{@render children()}
 </div>
